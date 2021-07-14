@@ -1,5 +1,5 @@
 const router=require('express').Router();
-const User=require('../model/ User');
+const User=require('../model/User');
 const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
 const {registerValidation,loginValidation}=require('../validation')
@@ -25,7 +25,7 @@ router.post('/register',async(req,res)=>{
     try{
     const savedUser=await user.save();
     res.send({user:user._id})
-
+    
     }
     catch(e){
         res.status.send(err);
